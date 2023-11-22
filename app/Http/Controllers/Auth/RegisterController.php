@@ -91,3 +91,7 @@ class RegisterController extends Controller
         return $user; // Return the created user
     }
 }
+
+
+
+
