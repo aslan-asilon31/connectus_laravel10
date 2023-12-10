@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('status_id');
             $table->string('image_id');
             $table->string('name');
-            $table->date('lang');
-            $table->date('lang_id');
+            $table->string('lang');
+            $table->string('lang_id');
             $table->softDeletes();
             $table->timestamps();
         });

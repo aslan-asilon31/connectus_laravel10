@@ -84,4 +84,11 @@ class UserController extends Controller
                         ->with('success','User Has Been updated successfully');
     }
 
+    public function destroy(Request $request)
+    {
+        $user = User::where('id',$request->id)->delete();
+     
+        return Response()->json($user);
+    }
+
 }

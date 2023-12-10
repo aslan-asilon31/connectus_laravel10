@@ -1,4 +1,4 @@
-<a href="{{ route('users.edit',$id) }}" data-toggle="tooltip" data-original-title="Edit" class="edit btn btn-success edit">
+<a href="{{ route('rolemasters.edit',$id) }}" data-toggle="tooltip" data-original-title="Edit" class="edit btn btn-success edit">
 	Edit
 </a>
 

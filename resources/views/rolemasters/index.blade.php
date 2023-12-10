@@ -36,7 +36,6 @@
              <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Email</th>
                 <th>Created at</th>
                 <th>Action</th>
              </tr>
@@ -74,11 +73,10 @@
      $('#datatable-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('users-list') }}",
+            ajax: "{{ url('rolemasters-list') }}",
             columns: [
                      { data: 'id', name: 'id' },
                      { data: 'name', name: 'name' },
-                     { data: 'email', name: 'email' },
                      { data: 'created_at', name: 'created_at' },
                      {data: 'action', name: 'action', orderable: false},
                   ],
@@ -93,7 +91,7 @@
          // ajax
          $.ajax({
              type:"POST",
-             url: "{{ url('delete-user') }}",
+             url: "{{ url('delete-rolemasters') }}",
              data: {
                     _token: "{{ csrf_token() }}",
                     id: id

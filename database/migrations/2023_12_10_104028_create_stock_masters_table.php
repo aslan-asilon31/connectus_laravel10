@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('status_id');
             $table->string('amount');
-            $table->date('lang');
-            $table->date('lang_id');
+            $table->string('lang');
+            $table->string('lang_id');
             $table->softDeletes();
             $table->timestamps();
         });

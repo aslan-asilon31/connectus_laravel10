@@ -211,7 +211,8 @@
                 <div class="collapse" id="ui-basic">
                   <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route('users.index') }}">User Master</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('rolemasters.index') }}">Role Master</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('rolemasters.index') }}">Brand Master</a></li>
                   </ul>
                 </div>
               </li>

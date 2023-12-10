@@ -7,41 +7,39 @@
 
     <div class="card">
       <div class="card-body">
-        <button type="button" class="btn btn-gradient-primary btn-fw collapsible" style="width: 100%">Advanced Search</button>
-        <div class="content" style="display: none; padding:20px; background-color:indigo;" >
-            <div class="row">
-                <div class="col-6" style="margin-top:10px">
-                    <input type="text" name="name" class="form-control searchName" placeholder="Search for Name Only...">
-                </div>
-                <div class="col-6" style="margin-top:10px">
-                    <input type="text" name="email" class="form-control searchEmail" placeholder="Search for Email Only...">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6" style="margin-top:10px">
-                    <input type="text" name="role_id" class="form-control searchRoleId" placeholder="Search for Role Only...">
-                </div>
-                <div class="col-6" style="margin-top: 10px">
-                    <select name="status" class="form-select searchStatus">
-                        <option value="">Select Status</option>
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+
         
-        <table class="table table-bordered" id="datatable-crud">
-          <thead>
-             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Created at</th>
-                <th>Action</th>
-             </tr>
-          </thead>
-       </table>
+           
+  @if(session('status'))
+    <div class="alert alert-success mb-1 mt-1">
+        {{ session('status') }}
+    </div>
+  @endif
+
+    <div class="pull-right">
+        <a class="btn btn-primary" href="{{ route('rolemasters.index') }}" enctype="multipart/form-data"> Back</a>
+    </div>
+
+  <form action="{{ route('rolemasters.update',$rolemaster->id) }}" method="POST" enctype="multipart/form-data">
+      @csrf
+      @method('PUT')
+ 
+       <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>Name:</strong>
+                  <input type="text" name="name" value="{{ $rolemaster->name }}" class="form-control" placeholder="Role name">
+                  @error('name')
+                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                  @enderror
+              </div>
+          </div>
+          
+            <button type="submit" class="btn btn-primary ml-3">Submit</button>
+        
+      </div>
+ 
+  </form>
         
       </div>
     </div>
@@ -94,10 +92,7 @@
          $.ajax({
              type:"POST",
              url: "{{ url('delete-user') }}",
-             data: {
-                    _token: "{{ csrf_token() }}",
-                    id: id
-                },
+             data: { id: id},
              dataType: 'json',
              success: function(res){
  
@@ -131,3 +126,32 @@
 </script>
     
 @endpush
+
+
+=======================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user Form - Laravel 10 Datatable CRUD Tutorial</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+</head>
+<body>
+
+<div class="container mt-2">
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Edit Company</h2>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
