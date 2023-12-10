@@ -5,20 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StockMaster extends Model
+class ImageMaster extends Model
 {
     use HasFactory;
 
-    protected $table = 'stock_master';
-    protected $primaryKey = 'stock_master_id';
+    protected $table = 'image_masters';
+    protected $primaryKey = 'image_master_id';
 
     protected $fillable = [
-        'stock_master_id',
-        'user_id',
+        'product_id',
         'status_id',
-        'amount',
+        'category_id',
+        'name',
+        'image',
+        'description',
         'lang',
         'lang_id',
     ];
-
 }

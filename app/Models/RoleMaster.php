@@ -10,6 +10,7 @@ class RoleMaster extends Model
     use  HasFactory;
 
     protected $table = 'roles_masters';
+    protected $primaryKey = 'roles_id';
 
     protected $fillable = [
         'roles_id',

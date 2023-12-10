@@ -1,6 +1,6 @@
 @extends('../layouts/backend_layout')
 
-@section('title','User Page')
+@section('title','create Role Master Page')
 
 @section('content')
 <div class="col-lg-12 stretch-card">
