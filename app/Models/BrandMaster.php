@@ -21,4 +21,5 @@ class BrandMaster extends Model
         'lang',
         'lang_id',
     ];
+    
 }

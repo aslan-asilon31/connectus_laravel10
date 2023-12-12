@@ -169,6 +169,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        // Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ])->toArray(),
 
     /*
@@ -185,6 +187,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        "FastExcel" => Rap2hpoutre\FastExcel\Facades\FastExcel::class,
+        // 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

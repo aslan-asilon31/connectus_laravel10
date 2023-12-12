@@ -1,17 +1,14 @@
 @extends('../layouts/backend_layout')
 
-@section('title','User Page')
+@section('title','Region Master Page')
 
 @section('content')
 <div class="col-lg-12 stretch-card">
-  @include('sweetalert::alert')
 
     <div class="card">
       <div class="card-body">
         <button type="button" class="btn btn-gradient-primary btn-fw collapsible" style="width: 100%">Advanced Search</button>
         <div class="content" style="display: none; padding:20px; background-color:indigo;" >
-
-          
             <div class="row">
                 <div class="col-6" style="margin-top:10px">
                     <input type="text" name="name" class="form-control searchName" placeholder="Search for Name Only...">
@@ -33,18 +30,12 @@
                 </div>
             </div>
         </div>
-
-        <a href="{{ route('users.create') }}">Add User</a>
-        <a href="{{ route('users.export') }}">Export User</a>
         
         <table class="table table-bordered" id="datatable-crud">
           <thead>
              <tr>
-                {{-- <th>Id</th> --}}
+                <th>Id</th>
                 <th>Name</th>
-                <th>Image</th>
-                <th>Email</th>
-                <th>Role</th>
                 <th>Created at</th>
                 <th>Action</th>
              </tr>
@@ -82,23 +73,14 @@
      $('#datatable-crud').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('users-list') }}",
+            ajax: "{{ url('rolemasters-list') }}",
             columns: [
-                    //  { data: 'id', name: 'id' },
+                     { data: 'id', name: 'id' },
                      { data: 'name', name: 'name' },
-                     {
-                        data: 'image', // Assuming image data is directly available
-                        name: 'image',
-                        render: function (data, type, row) {
-                          return `<img src="{{ asset('${data}')}}" class="rounded" style="width: 50px;height:50px; ">`; // Use Storage::url without "public/users/"
-                        },
-                      },
-                     { data: 'email', name: 'email' },
-                     { data: 'role', name: 'role' },
                      { data: 'created_at', name: 'created_at' },
                      {data: 'action', name: 'action', orderable: false},
                   ],
-                  order: [[1, 'asc']]
+                  order: [[0, 'desc']]
         });
  
      $('body').on('click', '.delete', function () {
@@ -109,7 +91,7 @@
          // ajax
          $.ajax({
              type:"POST",
-             url: "{{ url('delete-user') }}",
+             url: "{{ url('delete-rolemasters') }}",
              data: {
                     _token: "{{ csrf_token() }}",
                     id: id

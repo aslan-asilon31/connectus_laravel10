@@ -23,8 +23,8 @@ return new class extends Migration
             $table->integer('discount')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->date('lang')->nullable();
-            $table->date('lang_id')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lang_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

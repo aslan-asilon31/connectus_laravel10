@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\MasterData;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\RoleMaster;
 use Datatables;
@@ -10,7 +11,7 @@ class RoleMasterController extends Controller
 {
     
     public function index(){
-        return view('rolemasters.index');
+        return view('masterdata.rolemasters.index');
     }
 
     public function getdata(){
@@ -24,12 +25,12 @@ class RoleMasterController extends Controller
         }
 
         // $users = User::all();
-        // return view('rolemasters.index',compact('rolemasters'));
+        // return view('masterdata.rolemasters.index',compact('rolemasters'));
     }
 
     public function create()
     {
-        return view('rolemasters.create');
+        return view('masterdata.rolemasters.create');
     }
 
     public function store(Request $request)
@@ -58,13 +59,13 @@ class RoleMasterController extends Controller
 
     public function show(RoleMaster $rolemaster)
     {
-        return view('rolemasters.show',compact('rolemaster'));
+        return view('masterdata.rolemasters.show',compact('rolemaster'));
     } 
 
 
     public function edit(RoleMaster $rolemaster)
     {
-        return view('rolemasters.edit',compact('rolemaster'));
+        return view('masterdata.rolemasters.edit',compact('rolemaster'));
     }
 
     public function update(Request $request, $id)

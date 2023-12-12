@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('category_id')->nullable();
             $table->string('name')->nullable();
             $table->string('image')->nullable();
+            $table->string('image')->nullable();
             $table->text('description')->nullable();
-            $table->date('lang')->nullable();
-            $table->date('lang_id')->nullable();
+            $table->text('table_name')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lang_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

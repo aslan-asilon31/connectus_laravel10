@@ -27,8 +27,8 @@ return new class extends Migration
             $table->integer('prod_amount')->nullable();
             $table->integer('total_price')->nullable();
             $table->integer('gross_total_price')->nullable();
-            $table->date('lang')->nullable();
-            $table->date('lang_id')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lang_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

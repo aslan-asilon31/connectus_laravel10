@@ -1,11 +1,10 @@
 @extends('../layouts/backend_layout')
 
-@section('title','User Page')
+@section('title','Edit Price Master Page')
 
 @section('content')
 <div class="col-lg-12 stretch-card">
-  @include('sweetalert::alert')
-  
+
     <div class="card">
       <div class="card-body">
 
@@ -18,32 +17,24 @@
   @endif
 
     <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('users.index') }}" enctype="multipart/form-data"> Back</a>
+        <a class="btn btn-primary" href="{{ route('rolemasters.index') }}" enctype="multipart/form-data"> Back</a>
     </div>
 
-  <form action="{{ route('users.update',$user->id) }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('rolemasters.update',$rolemaster->id) }}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PUT')
  
        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-                  <strong>Company Name:</strong>
-                  <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Company name">
+                  <strong>Name:</strong>
+                  <input type="text" name="name" value="{{ $rolemaster->name }}" class="form-control" placeholder="Role name">
                   @error('name')
                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                   @enderror
               </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="form-group">
-                  <strong>user Email:</strong>
-                   <input type="email" name="email" class="form-control" placeholder="user Email" value="{{ $user->email }}">
-                  @error('email')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                 @enderror
-              </div>
-          </div>
+          
             <button type="submit" class="btn btn-primary ml-3">Submit</button>
         
       </div>
@@ -135,3 +126,32 @@
 </script>
     
 @endpush
+
+
+=======================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user Form - Laravel 10 Datatable CRUD Tutorial</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+</head>
+<body>
+
+<div class="container mt-2">
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Edit Company</h2>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

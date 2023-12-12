@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('status_id')->nullable();
             $table->string('name')->nullable();
             $table->string('desc')->nullable();
-            $table->date('lang')->nullable();
-            $table->date('lang_id')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lang_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

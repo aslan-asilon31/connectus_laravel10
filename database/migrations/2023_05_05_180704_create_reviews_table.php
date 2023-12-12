@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('user_id')->nullable();
             $table->integer('rating')->nullable();
             $table->text('comments')->nullable();
-            $table->date('lang')->nullable();
-            $table->date('lang_id')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('lang_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

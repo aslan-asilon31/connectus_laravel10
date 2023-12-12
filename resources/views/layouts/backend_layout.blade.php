@@ -51,7 +51,7 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">David Greymaax</p>
+                  <p class="mb-1 text-black">{{ Auth::user()->name ? Auth::user()->name : 'hello' }}</p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -184,8 +184,8 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">David Grey. H</span>
-                  <span class="text-secondary text-small">Project Manager</span>
+                  <span class="font-weight-bold mb-2">{{ Auth::user()->name ? Auth::user()->name : 'hello' }}</span>
+                  <span class="text-secondary text-small">{{ Auth::user()->role ? Auth::user()->role : '' }}</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
@@ -194,6 +194,18 @@
               <a class="nav-link" href="/home">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.index') }}">
+                <span class="menu-cash-multiple">Transaction</span>
+                <i class="mdi mdi-account menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.index') }}">
+                <span class="menu-title">Order</span>
+                <i class="mdi mdi-shopping menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -212,7 +224,10 @@
                   <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{ route('users.index') }}">User Master</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('rolemasters.index') }}">Role Master</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('rolemasters.index') }}">Brand Master</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('brandmasters.index') }}">Brand Master</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('imagemasters.index') }}">Gallery Master</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('bankmasters.index') }}">Bank Master</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('regionmasters.index') }}">Region Master</a></li>
                   </ul>
                 </div>
               </li>
