@@ -6,22 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('image_masters', function (Blueprint $table) {
+        Schema::create('departemen_masters', function (Blueprint $table) {
             $table->id();
-            $table->string('image_master_id')->nullable();
             $table->string('product_id')->nullable();
             $table->string('status_id')->nullable();
-            $table->string('category_id')->nullable();
             $table->string('name')->nullable();
-            $table->string('image')->nullable();
-            $table->text('description')->nullable();
-            $table->text('table_name')->nullable();
-            $table->string('lang')->nullable();
-            $table->string('lang_id')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -31,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_images');
+        Schema::dropIfExists('departemen_masters');
     }
 };

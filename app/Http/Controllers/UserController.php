@@ -72,14 +72,16 @@ class UserController extends Controller
             'email' => 'required',
             'role' => 'required',
             // 'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'image'     => 'required',
+            // 'image'     => 'required',
             'password' => 'nullable|min:8|confirmed',
         ]);
 
-        //upload image
-        // $image = $request->file('image');
-        // $image->storeAs('public/users', $image->hashName());
 
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('public/users', $image->hashName());
+
+        
         $user = new User;
         
         $latestUser = User::latest()->first();

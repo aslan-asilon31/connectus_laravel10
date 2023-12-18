@@ -12,6 +12,13 @@ class BrandMasterSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        App\Models\BrandMaster::create([
+            'status_id'	=> 1,
+            'product_id'	=> 1,
+            'image_id'	=> 1,
+            'name'	=> 'Matahari',
+            'lang'	=> 1,
+            'lang_id'	=> 1, 
+        ]);
     }
 }

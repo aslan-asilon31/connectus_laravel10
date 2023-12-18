@@ -12,6 +12,17 @@ class ImageMasterSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        App\Models\ImageMaster::create([
+            'image_master_id'	=> 1,
+            'product_id'	=> 1,
+            'status_id'	=> 1,
+            'category_id'	=> 1,
+            'name'	=> 'img1',
+            'image'	=> 'img1.png',
+            'description' => '-',
+            'table_name' => '-',
+            'lang'	=> 1,
+            'lang_id'	=> 1, 
+        ]);
     }
 }
