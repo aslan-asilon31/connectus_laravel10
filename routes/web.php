@@ -9,11 +9,9 @@ use App\Http\Controllers\OrderController;
 Route::get('/master-login', [MasterLoginController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
 
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 Auth::routes();
