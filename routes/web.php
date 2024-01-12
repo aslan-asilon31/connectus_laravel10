@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\SocialiteController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,8 @@ use App\Http\Controllers\Auth\SocialiteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::get('/auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
