@@ -8,6 +8,26 @@
 </head>
 <body>
 
+<ul>
+<li>
+
+   <a href="" >Dashboard</A>
+    <a href="" >Departments</A>
+
+
+<a href="" >Employee</A>
+<a href="" >Events</A>
+
+
+<a href="" >Helpdesk</A>
+
+
+
+</li>
+</ul>
+
+
+
     @yield('content')
     
 </body>
